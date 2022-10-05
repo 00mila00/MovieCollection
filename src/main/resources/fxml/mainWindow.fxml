@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="637.0" prefWidth="926.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <ScrollPane prefHeight="637.0" prefWidth="926.0">
+        <content>
+          <AnchorPane id="bgMain" minHeight="0.0" minWidth="0.0" prefHeight="635.0" prefWidth="924.0" style="-fx-background-color: #333333;" stylesheets="@../style/style.css">
+               <children>
+                  <Button layoutX="758.0" layoutY="431.0" mnemonicParsing="false" onAction="#showProfile" prefHeight="30.0" prefWidth="102.0" style="-fx-base: #444444;" styleClass="button-pro" text="My account" />
+                  <ToggleButton layoutX="757.0" layoutY="468.0" mnemonicParsing="false" onAction="#logOut" prefHeight="30.0" prefWidth="105.0" style="-fx-base: #444444;" styleClass="button-pro" text="Log out" />
+                  <TextField fx:id="searchTextField" layoutX="133.0" layoutY="112.0" prefHeight="25.0" prefWidth="413.0" promptText="Search by title">
+                     <font>
+                        <Font name="Monospaced Regular" size="12.0" />
+                     </font></TextField>
+                  <HBox id="searchImage" layoutX="588.0" layoutY="120.0" prefHeight="35.0" prefWidth="35.0" stylesheets="@../style/style.css">
+                     <children>
+                        <ToggleButton id="searcher" mnemonicParsing="false" onAction="#search" prefHeight="60.0" prefWidth="60.0">
+                           <effect>
+                              <ColorAdjust brightness="-1.0" />
+                           </effect>
+                        </ToggleButton>
+                     </children>
+                     <effect>
+                        <ColorAdjust brightness="-0.41" />
+                     </effect>
+                  </HBox>
+                  <VBox fx:id="vBoxList" layoutX="133.0" layoutY="230.0" prefHeight="351.0" prefWidth="573.0" style="-fx-background-color: rgba(100,100,100,0.8); -fx-opacity: 0.95; -fx-border-color: #444444; -fx-border-width: 5;" />
+                  <Button fx:id="addFilmButton" layoutX="755.0" layoutY="91.0" mnemonicParsing="false" onAction="#addFilm" prefHeight="31.0" prefWidth="101.0" style="-fx-base: brown;" styleClass="button-pro" text="Add film" visible="false" />
+                  <HBox alignment="CENTER" layoutX="-3.0" layoutY="-2.0" prefHeight="63.0" prefWidth="926.0" spacing="20.0" style="-fx-background-color: #333333;">
+                     <children>
+                        <ImageView fitHeight="54.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/cam.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="-30.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="MOVIECOLLECTION">
+                           <font>
+                              <Font name="Monospaced Bold" size="28.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <Text fx:id="welcomeText" fill="WHITE" layoutX="133.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="600.0">
+                     <font>
+                        <Font name="Monospaced Regular" size="12.0" />
+                     </font>
+                  </Text>
+                  <ChoiceBox fx:id="genreChoiceBox" layoutX="134.0" layoutY="148.5" prefHeight="25.0" prefWidth="412.0" style="-fx-base: #444444;" styleClass="button-pro" />
+                  <TextField fx:id="yearTextField" layoutX="134.0" layoutY="185.0" prefHeight="27.0" prefWidth="119.0" promptText="Search by year" styleClass="button-pro" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
